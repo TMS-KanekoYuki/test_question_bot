@@ -22,9 +22,13 @@ import os
 # 軽量なウェブアプリケーションフレームワーク:Flask
 app = Flask(__name__)
 
+data = os.environ
+for k in data:
+    print(k)
+
 
 #環境変数からLINE Access Tokenを設定
-LINE_CHANNEL_ACCESS_TOKEN = '3OzWlDWCSRYcUxZLrj7Ic8p70xlSFXILrJl2QIQN6hk/ArWt68PXUnbvcCiV8ihCJ5atZY1G4SxW8r4LAAk8QfS8/V/8yS7dqU864i0Q8CrRprJ3ynJchhFoH67aA4nBZVdaL6ZFAwmemyuFRBKa3gdB04t89/1O/w1cDnyilFU='
+LINE_CHANNEL_ACCESS_TOKEN = os.environ["LINE_CHANNEL_ACCESS_TOKEN"]
 #環境変数からLINE Channel Secretを設定
 LINE_CHANNEL_SECRET = os.environ["LINE_CHANNEL_SECRET"]
 
