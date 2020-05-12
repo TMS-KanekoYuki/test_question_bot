@@ -54,7 +54,6 @@ def handle_message(event):
         event.reply_token,
         TextSendMessage(text='「' + event.message.text + '」って何？')
      )
-    print(event.message.text)
 
 if __name__ == "__main__":
     port = int(os.getenv("PORT"))
