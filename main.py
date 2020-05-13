@@ -50,10 +50,13 @@ def callback():
 # MessageEvent
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-	line_bot_api.reply_message(
+    if event.reply_token == "00000000000000000000000000000000":
+        return
+
+    line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text='「' + event.message.text + '」って何？')
-     )
+        TextSendMessage(text=event.message.text))
+
 
 if __name__ == "__main__":
     port = int(os.getenv("PORT"))
